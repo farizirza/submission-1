@@ -1,0 +1,281 @@
+:root{
+  --base-color: white;
+  --text-color: #111528;
+  --secondary-text: #d05e7f;
+  --primary-color: #d05e7f;
+}
+
+.darkmode{
+  --base-color: #070b1d;
+  --text-color: #ffffff;
+  --secondary-text: #d05e7f;
+  --primary-color: #d05e7f;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+  font-family: 'NotoSansJP', sans-serif;
+  color: var(--text-color);
+ 
+  margin: 0;
+  padding: 0;
+  background-color: var(--base-color);
+ 
+  display: flex;
+  flex-direction: column;
+}
+
+header.navbar-container {
+  display: flex;
+	align-items: center;
+  background-color: var(--base-color);
+  
+  width: 100%;
+	padding: 10px;
+  border-bottom: solid;
+  border-width: 3px;
+  border-color: var(--secondary-text);
+  
+	padding-left: 5%;
+}
+
+#theme-switch{
+  height: 50px;
+  width: 50px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: var(--base-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 10px;
+  right: 20px;
+}
+
+#theme-switch svg{
+  fill: var(--primary-color);
+}
+
+#theme-switch svg:last-child{
+  display: none;
+}
+
+.darkmode #theme-switch svg:first-child{
+  display: none;
+}
+
+.darkmode #theme-switch svg:last-child{
+  display: block;
+}
+
+header.navbar-container .logo img {
+	width: 150px;
+}
+
+header.navbar-container .nav-list ul {
+	display: flex;
+  flex: 1;
+  align-items: center;
+	justify-content: center;
+	gap: 2rem;
+}
+
+header.navbar-container .nav-list li {
+	list-style-type: none;
+}
+
+header.navbar-container .nav-list li a {
+	padding: 1rem 2rem;
+	border-radius: 15px;
+
+	text-decoration: none;
+	font-size: 1rem;
+	font-weight: 500;
+	color: var(--text-color);
+
+	transition: all 0.2s ease-in-out;
+}
+
+header.navbar-container .nav-list li:hover a {
+	background-color: var(--primary-color);
+	color: var(--base-color)
+}
+
+main {
+  flex: 1;
+ 
+  width: 100%;
+  max-width: 1400px;
+  margin-inline: auto;
+  padding-top: 40px;
+ 
+  display: flex;
+  align-items: center;
+}
+
+main .content {
+  flex: 1;
+ 
+  display: flex;
+  align-items: center;
+}
+
+.name {
+  font-size: 4rem;
+  font-weight: 1000;
+  color: var(--secondary-text)
+}
+
+.description {
+  font-size: 1.35rem;
+  line-height: 2rem;
+  color: var(--text-color);
+}
+
+img {
+  border-radius: 15px;
+  
+}
+
+.content-image {
+  display: flex;
+  justify-content: center;
+
+
+  height: 400px;
+  max-height: 500px;
+  padding-left: 10px;
+  border-radius: 10px;
+  padding-top: 10px;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.logos {
+  flex: 1;
+  display: flex;
+  
+  overflow: hidden;
+  padding: 50px;
+  padding-bottom: 5px;
+}
+
+.logos-slide {
+  white-space: nowrap;
+  animation: 20s slide infinite linear;
+}
+
+.logos-slide img {
+  height: 150px;
+  margin: 0 40px;
+}
+
+.about-me {
+  display: flex;
+  border: solid;
+  border-width: 4px;
+  border-color: var(--primary-color);
+  width: 400px;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+  margin: auto;
+}
+
+.about-me h2{
+  color: var(--primary-color);
+}
+
+.about-me img {
+  width: 320px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+.about-me p {
+  text-align: flex-start;
+  font-size: 16px;
+  line-height: 1.5;
+  max-width: 500px;
+}
+
+.social-media ul {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.social-media li {
+  list-style: none;
+}
+
+.social-media li a {
+  font-size: 24px;
+  color: var(--primary-color);
+  transition: 0.3s;
+}
+
+.social-media li a:hover {
+  color: var(--text-color);
+}
+
+footer {
+  display: flex;
+  flex: 1;
+
+  padding: 10px;
+  color: var(--base-color);
+  background-color: var(--primary-color);
+  font-weight: bold;
+}
+
+footer p {
+  margin-inline: auto;
+}
+
+@media screen and (max-width: 1024px) {
+  .name {
+    font-size: 2.5rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header.navbar-container {
+    flex-direction: column;
+  }
+
+  .nav-list ul {
+    flex-wrap: wrap;
+    column-gap: 0.5rem;
+  }
+
+  main {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .name {
+    font-size: 3rem;
+  }
+
+  .content-image img {
+    height: 300px;
+  }
+}
