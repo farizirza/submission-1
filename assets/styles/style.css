@@ -177,7 +177,7 @@ main .content .content-image img {
 
 .logos-slide {
   display: inline-block;
-  animation: 2s slide infinite linear;
+  animation: 25s slide infinite linear;
 }
 
 .logos-slide img {
@@ -258,6 +258,11 @@ footer p {
   .description {
     font-size: 1rem;
   }
+
+  main .content{
+    flex-flow: column;
+    text-align: center;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -270,8 +275,8 @@ footer p {
     column-gap: 0.5rem;
   }
 
-  main {
-    flex-direction: column;
+  main .content{
+    flex-flow: column;
     text-align: center;
   }
 
